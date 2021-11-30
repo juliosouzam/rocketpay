@@ -19,8 +19,10 @@ config :rocketpay, RocketpayWeb.Endpoint,
   live_view: [signing_salt: "vecyOM1w"]
 
 config :rocketpay, Rocketpay.Repo,
-  migration_primary_key: [type: :binary_id],
-  migration_foreign_key: [type: :binary_id]
+  migration_primary_key: [name: :id, type: :binary_id],
+  migration_foreign_key: [name: :id, type: :binary_id]
+
+config :bcrypt_elixir, log_rounds: 10
 
 # Configures Elixir's Logger
 config :logger, :console,
